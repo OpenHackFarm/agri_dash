@@ -234,6 +234,7 @@ var museums = L.geoJson(null, {
 });
 $.getJSON("data/weatherStationCWB-1474130856856.geojson", function (data) {
   museums.addData(data);
+  map.addLayer(cwbLayer);
 });
 // var cwb_stations = omnivore.csv('https://docs.google.com/spreadsheets/d/1NoiUS6RTbYl7ULoH6jMcBdL4EsmOf8r6fxs6FdnEd-E/pub?gid=2019668606&single=true&output=csv').on('ready', function () {
 //     museums.addData(cwb_stations.toGeoJSON());
