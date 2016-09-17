@@ -183,14 +183,14 @@ var theaters = L.geoJson(null, {
     }
   }
 });
-// $.getJSON("data/DOITT_THEATER_01_13SEPT2010.geojson", function (data) {
-//   theaters.addData(data);
-//   map.addLayer(lassLayer);
-// });
-var lass_stations = omnivore.csv('https://docs.google.com/spreadsheets/d/1NoiUS6RTbYl7ULoH6jMcBdL4EsmOf8r6fxs6FdnEd-E/pub?gid=1055640495&single=true&output=csv').on('ready', function () {
-    theaters.addData(lass_stations.toGeoJSON());
-    map.addLayer(lassLayer);
+$.getJSON("data/weatherStationLASS-1474130650650.geojson", function (data) {
+  theaters.addData(data);
+  map.addLayer(lassLayer);
 });
+// var lass_stations = omnivore.csv('https://docs.google.com/spreadsheets/d/1NoiUS6RTbYl7ULoH6jMcBdL4EsmOf8r6fxs6FdnEd-E/pub?gid=1055640495&single=true&output=csv').on('ready', function () {
+//     theaters.addData(lass_stations.toGeoJSON());
+//     map.addLayer(lassLayer);
+// });
 
 /* Empty layer placeholder to add to layer control for listening when to add/remove museums to markerClusters layer */
 var cwbLayer = L.geoJson(null);
@@ -232,13 +232,13 @@ var museums = L.geoJson(null, {
     }
   }
 });
-// $.getJSON("data/newcwbobs_gmap.geojson", function (data) {
-//   museums.addData(data);
-// });
-var cwb_stations = omnivore.csv('https://docs.google.com/spreadsheets/d/1NoiUS6RTbYl7ULoH6jMcBdL4EsmOf8r6fxs6FdnEd-E/pub?gid=2019668606&single=true&output=csv').on('ready', function () {
-    museums.addData(cwb_stations.toGeoJSON());
-    map.addLayer(cwbLayer);
+$.getJSON("data/weatherStationCWB-1474130856856.geojson", function (data) {
+  museums.addData(data);
 });
+// var cwb_stations = omnivore.csv('https://docs.google.com/spreadsheets/d/1NoiUS6RTbYl7ULoH6jMcBdL4EsmOf8r6fxs6FdnEd-E/pub?gid=2019668606&single=true&output=csv').on('ready', function () {
+//     museums.addData(cwb_stations.toGeoJSON());
+//     map.addLayer(cwbLayer);
+// });
 
 map = L.map("map", {
   zoom: 7,
