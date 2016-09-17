@@ -1,0 +1,566 @@
+﻿{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "27",
+        "縣市": "臺東縣",
+        "測站名稱": "蘭嶼",
+        "測站地址": "蘭嶼鄉紅頭村２號"
+      },
+      "geometry": {
+        "coordinates": [
+          121.550555,
+          22.038611
+        ],
+        "type": "Point"
+      },
+      "id": "135ed935295ea819a012a6d39d49c487"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "29",
+        "縣市": "花蓮縣",
+        "測站名稱": "花蓮",
+        "測站地址": "花蓮市花崗街２４號"
+      },
+      "geometry": {
+        "coordinates": [
+          121.605,
+          23.976944
+        ],
+        "type": "Point"
+      },
+      "id": "1458fec89efcfdad6457ae88515cefc6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "18",
+        "縣市": "桃園市",
+        "測站名稱": "新屋",
+        "測站地址": "新屋區東興路二段９４６號"
+      },
+      "geometry": {
+        "coordinates": [
+          121.039166,
+          25.008611
+        ],
+        "type": "Point"
+      },
+      "id": "1a639fa011583e5b685f07ce931612dc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "2",
+        "縣市": "臺北市",
+        "測站名稱": "臺北",
+        "測站地址": "中正區公園路６４號"
+      },
+      "geometry": {
+        "coordinates": [
+          121.506666,
+          25.039444
+        ],
+        "type": "Point"
+      },
+      "id": "1c85b417cb0288a3481dce1590872900"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "14",
+        "縣市": "基隆市",
+        "測站名稱": "彭佳嶼",
+        "測站地址": "中正區彭佳嶼"
+      },
+      "geometry": {
+        "coordinates": [
+          122.071388,
+          25.629444
+        ],
+        "type": "Point"
+      },
+      "id": "1e87edd64622bfc11293cb94e9764915"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "7",
+        "縣市": "臺中市",
+        "測站名稱": "臺中",
+        "測站地址": "北區精武路２９５號"
+      },
+      "geometry": {
+        "coordinates": [
+          120.675833,
+          24.1475
+        ],
+        "type": "Point"
+      },
+      "id": "269d7bfe08b85fe828d5b80747fad2aa"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "32",
+        "縣市": "金門縣",
+        "測站名稱": "金門",
+        "測站地址": "金城鎮金水里西海路一段２５０號"
+      },
+      "geometry": {
+        "coordinates": [
+          118.289166,
+          24.4075
+        ],
+        "type": "Point"
+      },
+      "id": "39d5d0f6360847893b0f3b6337831434"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "26",
+        "縣市": "臺東縣",
+        "測站名稱": "成功",
+        "測站地址": "成功鎮公民路８４號"
+      },
+      "geometry": {
+        "coordinates": [
+          121.365277,
+          23.099166
+        ],
+        "type": "Point"
+      },
+      "id": "511c8cbd748dd90465d1fa2fafcc1edb"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "16",
+        "縣市": "宜蘭縣",
+        "測站名稱": "蘇澳",
+        "測站地址": "蘇澳鎮港區路１號６樓(蘇澳港行政大樓６樓)"
+      },
+      "geometry": {
+        "coordinates": [
+          121.864444,
+          24.601666
+        ],
+        "type": "Point"
+      },
+      "id": "5697c701495ebfd59ce7e45f640f0980"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "31",
+        "縣市": "澎湖縣",
+        "測站名稱": "澎湖",
+        "測站地址": "馬公市新興路２號"
+      },
+      "geometry": {
+        "coordinates": [
+          119.555277,
+          23.567222
+        ],
+        "type": "Point"
+      },
+      "id": "61d69f79197e18d1d177befccd5be163"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "17",
+        "縣市": "宜蘭縣",
+        "測站名稱": "宜蘭",
+        "測站地址": "宜蘭市力行路１５０號"
+      },
+      "geometry": {
+        "coordinates": [
+          121.748055,
+          24.765555
+        ],
+        "type": "Point"
+      },
+      "id": "6fae6018a904f0117cb0e0f5d1291fb7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "20",
+        "縣市": "南投縣",
+        "測站名稱": "玉山",
+        "測站地址": "信義鄉玉山北峰１號"
+      },
+      "geometry": {
+        "coordinates": [
+          120.951666,
+          23.489166
+        ],
+        "type": "Point"
+      },
+      "id": "70fea8cc69b0bee4816e74601d49856a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "8",
+        "縣市": "臺中市",
+        "測站名稱": "梧棲",
+        "測站地址": "梧棲區臺灣大道十段２號海港大樓６樓"
+      },
+      "geometry": {
+        "coordinates": [
+          120.515,
+          24.258611
+        ],
+        "type": "Point"
+      },
+      "id": "784ee4097db68a67ff30e2944fa60353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "10",
+        "縣市": "臺南市",
+        "測站名稱": "永康",
+        "測站地址": "永康區鹽行里正南五街５２０巷８８號"
+      },
+      "geometry": {
+        "coordinates": [
+          120.228611,
+          23.039444
+        ],
+        "type": "Point"
+      },
+      "id": "7b6695ab479fa77e9cb4775b44f5d39e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "33",
+        "縣市": "連江縣",
+        "測站名稱": "馬祖",
+        "測站地址": "南竿鄉四維村６鄰８８號"
+      },
+      "geometry": {
+        "coordinates": [
+          119.923055,
+          26.169444
+        ],
+        "type": "Point"
+      },
+      "id": "7d07d7edf4c1652eac3c8350be0766a5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "1",
+        "縣市": "臺北市",
+        "測站名稱": "鞍部",
+        "測站地址": "北投區陽明山竹子湖路１１１號"
+      },
+      "geometry": {
+        "coordinates": [
+          121.52,
+          25.186388
+        ],
+        "type": "Point"
+      },
+      "id": "83c729726e7106052d732eaaf04efa3a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "3",
+        "縣市": "臺北市",
+        "測站名稱": "竹子湖",
+        "測站地址": "北投區陽明山竹子湖路２號"
+      },
+      "geometry": {
+        "coordinates": [
+          121.536388,
+          25.165
+        ],
+        "type": "Point"
+      },
+      "id": "900cc2730407da102a0336bf70fb01aa"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "22",
+        "縣市": "嘉義縣",
+        "測站名稱": "阿里山",
+        "測站地址": "阿里山鄉中正村四鄰東阿里山７３-１號"
+      },
+      "geometry": {
+        "coordinates": [
+          120.805,
+          23.510277
+        ],
+        "type": "Point"
+      },
+      "id": "9aea8bd35814feaae0eda135ca997f0e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "13",
+        "縣市": "基隆市",
+        "測站名稱": "基隆",
+        "測站地址": "仁愛區港西街６號６樓(海港大樓６樓)"
+      },
+      "geometry": {
+        "coordinates": [
+          121.732222,
+          25.134722
+        ],
+        "type": "Point"
+      },
+      "id": "9c046cd84536fefdc45150f244002bae"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "28",
+        "縣市": "臺東縣",
+        "測站名稱": "臺東",
+        "測站地址": "臺東市大同路１０６號"
+      },
+      "geometry": {
+        "coordinates": [
+          121.146666,
+          22.754166
+        ],
+        "type": "Point"
+      },
+      "id": "a20d5c355ab78ea0ed7d074736db12ff"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "12",
+        "縣市": "高雄市",
+        "測站名稱": "高雄",
+        "測站地址": "前鎮區明孝里２６鄰漁港南二路２號"
+      },
+      "geometry": {
+        "coordinates": [
+          120.308055,
+          22.567777
+        ],
+        "type": "Point"
+      },
+      "id": "ad2d2420f068c5cad9086fa2026f9750"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "25",
+        "縣市": "臺東縣",
+        "測站名稱": "大武",
+        "測站地址": "大武鄉大武街１１５號"
+      },
+      "geometry": {
+        "coordinates": [
+          120.895555,
+          22.3575
+        ],
+        "type": "Point"
+      },
+      "id": "c40f6d2f3ebca1c73955f316837a9dc8"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "15",
+        "縣市": "嘉義市",
+        "測站名稱": "嘉義",
+        "測站地址": "西區北新里海口寮路５６號"
+      },
+      "geometry": {
+        "coordinates": [
+          120.424444,
+          23.497777
+        ],
+        "type": "Point"
+      },
+      "id": "c816f68e4409d3d328ea6deec09416dc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "9",
+        "縣市": "臺南市",
+        "測站名稱": "臺南",
+        "測站地址": "中西區公園路２１號"
+      },
+      "geometry": {
+        "coordinates": [
+          120.196666,
+          22.995
+        ],
+        "type": "Point"
+      },
+      "id": "cf71179100e402c2704665d9f71b545a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "11",
+        "縣市": "臺南市",
+        "測站名稱": "七股",
+        "測站地址": "七股區鹽埕２３７-１１號"
+      },
+      "geometry": {
+        "coordinates": [
+          120.069166,
+          23.147777
+        ],
+        "type": "Point"
+      },
+      "id": "d1fbf5d52900aa7fbf1c6239bade4a97"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "24",
+        "縣市": "屏東縣",
+        "測站名稱": "墾丁雷達站",
+        "測站地址": "恆春鎮燈塔路５１巷３３號"
+      },
+      "geometry": {
+        "coordinates": [
+          120.846944,
+          21.902777
+        ],
+        "type": "Point"
+      },
+      "id": "d886ab37daf7127298cdd59d77f32946"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "19",
+        "縣市": "新竹縣",
+        "測站名稱": "新竹",
+        "測站地址": "竹北市北崙里００３鄰光明五街６０號"
+      },
+      "geometry": {
+        "coordinates": [
+          121.006111,
+          24.83
+        ],
+        "type": "Point"
+      },
+      "id": "dca8f79e3e0c1fd817675c287d1beff0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "21",
+        "縣市": "南投縣",
+        "測站名稱": "日月潭",
+        "測站地址": "魚池鄉水社村中山路２７０巷１４號"
+      },
+      "geometry": {
+        "coordinates": [
+          120.908055,
+          23.881388
+        ],
+        "type": "Point"
+      },
+      "id": "e051e4b7e373f63dc7590ebb5a939023"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "6",
+        "縣市": "新北市",
+        "測站名稱": "淡水",
+        "測站地址": "淡水區中正東路４２巷６號"
+      },
+      "geometry": {
+        "coordinates": [
+          121.44,
+          25.165555
+        ],
+        "type": "Point"
+      },
+      "id": "ec9a0600c6171ec8826259f2e9f21467"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "23",
+        "縣市": "屏東縣",
+        "測站名稱": "恆春",
+        "測站地址": "恆春鎮天文路５０號"
+      },
+      "geometry": {
+        "coordinates": [
+          120.738055,
+          22.005555
+        ],
+        "type": "Point"
+      },
+      "id": "ee86d9a97b4e05594733e3b11479b717"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "4",
+        "縣市": "新北市",
+        "測站名稱": "五分山雷達站",
+        "測站地址": "瑞芳區靜安路四段１巷１號"
+      },
+      "geometry": {
+        "coordinates": [
+          121.7725,
+          25.072777
+        ],
+        "type": "Point"
+      },
+      "id": "f303979d04f2a8dbf3d0db7acfbe5f98"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "5",
+        "縣市": "新北市",
+        "測站名稱": "板橋",
+        "測站地址": "板橋區大觀路二段２６５巷６２號"
+      },
+      "geometry": {
+        "coordinates": [
+          121.433888,
+          24.999444
+        ],
+        "type": "Point"
+      },
+      "id": "f349b9210aab1377e664314a350238e5"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "序號": "30",
+        "縣市": "澎湖縣",
+        "測站名稱": "東吉島",
+        "測站地址": "望安鄉東吉村１５６號"
+      },
+      "geometry": {
+        "coordinates": [
+          119.659722,
+          23.258888
+        ],
+        "type": "Point"
+      },
+      "id": "f9ec193eb2c8d3e3e0ec38aa12bf0560"
+    }
+  ],
+  "type": "FeatureCollection"
+}
