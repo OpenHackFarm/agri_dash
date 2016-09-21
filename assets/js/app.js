@@ -1,4 +1,4 @@
-var map, featureList, theaterSearch = [], museumSearch = [];
+var map, featureList, theaterSearch = [], museumSearch = [], rainEPASearch = [];
 
 $(window).resize(function() {
   sizeLayerControl();
@@ -101,6 +101,14 @@ function syncSidebar() {
       }
     }
   });
+
+  rain_epa_stations.eachLayer(function (layer) {
+    if (map.hasLayer(rainEPALayer)) {
+      if (map.getBounds().contains(layer.getLatLng())) {
+        $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/epa.png"></td><td class="feature-name">' + layer.feature.properties.測站名稱 + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+      }
+    }
+  });
   /* Update list.js featureList */
   featureList = new List("features", {
     valueNames: ["feature-name"]
@@ -171,7 +179,7 @@ var theaters = L.geoJson(null, {
           highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
         }
       });
-      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/.png"></td><td class="feature-name">' + layer.feature.properties.地點 + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/epa.png"></td><td class="feature-name">' + layer.feature.properties.測站名稱 + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       theaterSearch.push({
         name: layer.feature.properties.地點,
         address: layer.feature.properties.地址,
@@ -241,6 +249,48 @@ $.getJSON("data/weatherStationCWB-1474130856856.geojson", function (data) {
 //     map.addLayer(cwbLayer);
 // });
 
+var rainEPALayer = L.geoJson(null);
+var rain_epa_stations = L.geoJson(null, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, {
+      icon: L.icon({
+        iconUrl: "assets/img/epa.png",
+        iconSize: [24, 28],
+        iconAnchor: [12, 28],
+        popupAnchor: [0, -25]
+      }),
+      title: feature.properties.NAME,
+      riseOnHover: true
+    });
+  },
+  onEachFeature: function (feature, layer) {
+    if (feature.properties) {
+    var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>地點</th><td>" + feature.properties.測站名稱 + "</td></tr>" + "<tr><th>地址</th><td>" + feature.properties.測站位置 + "</td></tr>" + "<tr><th>觀測項目</th><td>" + "雨量" + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
+      layer.on({
+        click: function (e) {
+          $("#feature-title").html(feature.properties.測站名稱);
+          $("#feature-info").html(content);
+          $("#featureModal").modal("show");
+          highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
+        }
+      });
+      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/epa.png"></td><td class="feature-name">' + layer.feature.properties.測站名稱 + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+      rainEPASearch.push({
+        name: layer.feature.properties.測站名稱,
+        address: layer.feature.properties.測站位置,
+        source: "rainEPA",
+        id: L.stamp(layer),
+        lat: layer.feature.geometry.coordinates[1],
+        lng: layer.feature.geometry.coordinates[0]
+      });
+    }
+  }
+});
+$.getJSON("data/rain_epa.geojson", function (data) {
+  rain_epa_stations.addData(data);
+  map.addLayer(rainEPALayer);
+});
+
 map = L.map("map", {
   zoom: 7,
   center: [23.9609981, 120.9718638],
@@ -259,6 +309,10 @@ map.on("overlayadd", function(e) {
     markerClusters.addLayer(museums);
     syncSidebar();
   }
+  if (e.layer === rainEPALayer) {
+    markerClusters.addLayer(rain_epa_stations);
+    syncSidebar();
+  }
 });
 
 map.on("overlayremove", function(e) {
@@ -268,6 +322,10 @@ map.on("overlayremove", function(e) {
   }
   if (e.layer === cwbLayer) {
     markerClusters.removeLayer(museums);
+    syncSidebar();
+  }
+  if (e.layer === rainEPALayer) {
+    markerClusters.removeLayer(rain_epa_stations);
     syncSidebar();
   }
 });
@@ -354,7 +412,8 @@ var baseLayers = {
 var groupedOverlays = {
   "Points of Interest": {
     "<img src='assets/img/lass.png' width='24' height='28'>&nbsp;LASS": lassLayer,
-    "<img src='assets/img/cwb.png' width='24' height='28'>&nbsp;中央氣象局": cwbLayer
+    "<img src='assets/img/cwb.png' width='24' height='28'>&nbsp;中央氣象局": cwbLayer,
+    "<img src='assets/img/epa.png' width='24' height='28'>&nbsp;環保署雨量站": rainEPALayer
   }
 };
 
@@ -409,6 +468,16 @@ $(document).one("ajaxStop", function () {
     limit: 10
   });
 
+  var rainEPABH = new Bloodhound({
+    name: "rainEPA",
+    datumTokenizer: function (d) {
+      return Bloodhound.tokenizers.whitespace(d.name);
+    },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    local: rainEPASearch,
+    limit: 10
+  });
+
   var geonamesBH = new Bloodhound({
     name: "GeoNames",
     datumTokenizer: function (d) {
@@ -441,6 +510,7 @@ $(document).one("ajaxStop", function () {
   });
   theatersBH.initialize();
   museumsBH.initialize();
+  rainEPABH.initialize();
   geonamesBH.initialize();
 
   /* instantiate the typeahead UI */
@@ -465,6 +535,14 @@ $(document).one("ajaxStop", function () {
       suggestion: Handlebars.compile(["{{name}}<br>&nbsp;<small>{{address}}</small>"].join(""))
     }
   }, {
+    name: "rainEPA",
+    displayKey: "name",
+    source: rainEPABH.ttAdapter(),
+    templates: {
+      header: "<h4 class='typeahead-header'><img src='assets/img/epa.png' width='24' height='28'>&nbsp;Rain-EPA</h4>",
+      suggestion: Handlebars.compile(["{{name}}<br>&nbsp;<small>{{address}}</small>"].join(""))
+    }
+  }, {
     name: "GeoNames",
     displayKey: "name",
     source: geonamesBH.ttAdapter(),
@@ -484,6 +562,15 @@ $(document).one("ajaxStop", function () {
     if (datum.source === "Museums") {
       if (!map.hasLayer(cwbLayer)) {
         map.addLayer(cwbLayer);
+      }
+      map.setView([datum.lat, datum.lng], 17);
+      if (map._layers[datum.id]) {
+        map._layers[datum.id].fire("click");
+      }
+    }
+    if (datum.source === "rainEPA") {
+      if (!map.hasLayer(rainEPALayer)) {
+        map.addLayer(rainEPALayer);
       }
       map.setView([datum.lat, datum.lng], 17);
       if (map._layers[datum.id]) {
