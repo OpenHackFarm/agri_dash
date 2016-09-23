@@ -191,7 +191,7 @@ var theaters = L.geoJson(null, {
     }
   }
 });
-$.getJSON("data/weatherStationLASS-1474130650650.geojson", function (data) {
+$.getJSON("data/weatherStationLASS-1474641472144.geojson", function (data) {
   theaters.addData(data);
   map.addLayer(lassLayer);
 });
