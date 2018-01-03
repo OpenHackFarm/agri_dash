@@ -97,7 +97,7 @@ function syncSidebar() {
   museums.eachLayer(function (layer) {
     if (map.hasLayer(cwbLayer)) {
       if (map.getBounds().contains(layer.getLatLng())) {
-        $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/cwb.png"></td><td class="feature-name">' + layer.feature.properties.地點 + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+        $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/cwb.png"></td><td class="feature-name">' + layer.feature.properties.FIELD2 + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       }
     }
   });
@@ -218,11 +218,12 @@ var museums = L.geoJson(null, {
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
       // var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>" + "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>" + "<tr><th>Address</th><td>" + feature.properties.ADRESS1 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
-    var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>地點</th><td>" + feature.properties.地點 + "</td></tr>" + "<tr><th>地址</th><td>" + feature.properties.地址 + "</td></tr>" + "<tr><th>觀測項目</th><td>" + feature.properties.觀測項目 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
+    // var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>地點</th><td>" + feature.properties.地點 + "</td></tr>" + "<tr><th>地址</th><td>" + feature.properties.地址 + "</td></tr>" + "<tr><th>觀測項目</th><td>" + feature.properties.觀測項目 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
+    var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>站號</th><td>" + feature.properties.FIELD1 + "</td></tr>" + "<tr><th>站名</th><td>" + feature.properties.FIELD2 + "</td></tr>" + "<tr><th>地址</th><td>" + feature.properties.FIELD7 + "</td></tr>" + "<tr><th>資料起始日期</th><td>" + feature.properties.FIELD8 + "</td></tr>" + "<table>";
       layer.on({
         click: function (e) {
           // $("#feature-title").html(feature.properties.NAME);
-          $("#feature-title").html(feature.properties.地點);
+          $("#feature-title").html(feature.properties.FIELD2);
           $("#feature-info").html(content);
           $("#featureModal").modal("show");
           highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
@@ -230,8 +231,8 @@ var museums = L.geoJson(null, {
       });
       $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/cwb.png"></td><td class="feature-name">' + layer.feature.properties.地點 + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       museumSearch.push({
-        name: layer.feature.properties.地點,
-        address: layer.feature.properties.地址,
+        name: layer.feature.properties.FIELD2,
+        address: layer.feature.properties.FIELD7,
         source: "Museums",
         id: L.stamp(layer),
         lat: layer.feature.geometry.coordinates[1],
@@ -240,7 +241,7 @@ var museums = L.geoJson(null, {
     }
   }
 });
-$.getJSON("data/weatherStationCWB-1474130856856.geojson", function (data) {
+$.getJSON("data/CWB_Stations_171226.geojson", function (data) {
   museums.addData(data);
   map.addLayer(cwbLayer);
 });
