@@ -412,7 +412,7 @@ var baseLayers = {
 
 var groupedOverlays = {
   "Points of Interest": {
-    "<img src='assets/img/lass.png' width='24' height='28'>&nbsp;LASS": lassLayer,
+    "<img src='assets/img/lass.png' width='24' height='28'>&nbsp;OpenHackFarm": lassLayer,
     "<img src='assets/img/cwb.png' width='24' height='28'>&nbsp;中央氣象局": cwbLayer,
     "<img src='assets/img/epa.png' width='24' height='28'>&nbsp;環保署": EPALayer
   }
