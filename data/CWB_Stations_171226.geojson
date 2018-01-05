@@ -5,25 +5,6 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
-    },
-    "properties": {
-    "FIELD1":"站號",
-    "FIELD2":"站名",
-    "FIELD3":"海拔高度(m)",
-    "FIELD6":"城市",
-    "FIELD7":"地址",
-    "FIELD8":"資料起始日期",
-    "FIELD9":"撤站日期",
-    "FIELD10":"備註",
-    "FIELD11":"原站號",
-    "FIELD12":"新站號"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
        "coordinates":  [ 121.7812,25.0712 ]
     },
     "properties": {
